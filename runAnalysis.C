@@ -17,8 +17,8 @@ void runAnalysis(Int_t period)
   // Bool_t local = kTRUE;
   Bool_t local = kFALSE;
   // if you run on grid, specify test mode (kTRUE) or full grid model (kFALSE)
-  Bool_t gridTest = kTRUE;
-  // Bool_t gridTest = kFALSE;
+  // Bool_t gridTest = kTRUE;
+  Bool_t gridTest = kFALSE;
 
     // since we will compile a class, tell root where to look for headers
 #if !defined (__CINT__) || defined (__CLING__)
