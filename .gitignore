@@ -1,0 +1,9 @@
+2*.xml
+LHC16*_*
+myA*
+output*
+Stage*
+stderr
+wn.xml
+AnalysisResults*
+AliAnalysisTaskNanoJPsi2016Fwd_*
