@@ -140,7 +140,7 @@ void runAnalysis(Int_t period)
   alienHandler->AddRunNumber(266316);
   alienHandler->AddRunNumber(266318);
 	  // working dir
-	  alienHandler->SetGridWorkingDir("LHC16r_kCoh_fwd3");
+	  alienHandler->SetGridWorkingDir("LHC16r_kGamma");
 	  alienHandler->SetExecutable("LHC16r_Task.sh");
 	  alienHandler->SetJDLName("LHC16r_Task.jdl");
 	}  else if (period == 1) {
@@ -224,7 +224,7 @@ void runAnalysis(Int_t period)
   alienHandler->AddRunNumber(267130);
   alienHandler->AddRunNumber(267131);
 	  // working dir
-	  alienHandler->SetGridWorkingDir("LHC16s_kCoh_fwd3");
+	  alienHandler->SetGridWorkingDir("LHC16s_kGamma");
 	  alienHandler->SetExecutable("LHC16s_Task.sh");
 	  alienHandler->SetJDLName("LHC16s_Task.jdl");
 	}  else {
