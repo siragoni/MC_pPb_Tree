@@ -74,8 +74,8 @@ void runAnalysis(Int_t period)
         // set the Alien API version
         alienHandler->SetAPIVersion("V1.1x");
         // select the input data
-	alienHandler->SetGridDataDir("/alice/sim/2017/LHC17e4/kIncohJpsiToMu");
-  // alienHandler->SetGridDataDir("/alice/sim/2017/LHC17e4/kTwoGammaToMuLow");
+	// alienHandler->SetGridDataDir("/alice/sim/2017/LHC17e4/kIncohJpsiToMu");
+  alienHandler->SetGridDataDir("/alice/sim/2017/LHC17e4/kTwoGammaToMuLow");
   // alienHandler->SetGridDataDir("/alice/sim/2017/LHC17e4/kCohJpsiToMu");
 	alienHandler->SetDataPattern("AOD/*/AliAOD.root");
 	if (period == 0) {
@@ -257,8 +257,8 @@ void runAnalysis(Int_t period)
             mgr->StartAnalysis("grid");
         } else {
 	  // else launch the full grid analysis
-	  // alienHandler->SetRunMode("full");
-	  alienHandler->SetRunMode("terminate");
+	  alienHandler->SetRunMode("full");
+	  // alienHandler->SetRunMode("terminate");
 	  mgr->StartAnalysis("grid");
         }
     }
