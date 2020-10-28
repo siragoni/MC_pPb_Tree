@@ -241,9 +241,9 @@ void runAnalysis(Int_t period)
         // merging: run with "kTRUE" and "full" for normal run
         // to merge on grid run jobs in SetRunMode("terminate")
         // to collect final results set SetMergeViaJDL(kFALSE)
-        alienHandler->SetMaxMergeStages(1);
-        alienHandler->SetMergeViaJDL(kFALSE);
-        // alienHandler->SetMergeViaJDL(kTRUE);
+        alienHandler->SetMaxMergeStages(2);
+        // alienHandler->SetMergeViaJDL(kFALSE);
+        alienHandler->SetMergeViaJDL(kTRUE);
         // define the output folders
         alienHandler->SetGridOutputDir("MyOutputDir");
         // connect the alien plugin to the manager
@@ -257,8 +257,8 @@ void runAnalysis(Int_t period)
             mgr->StartAnalysis("grid");
         } else {
 	  // else launch the full grid analysis
-	  // alienHandler->SetRunMode("full");
-	  alienHandler->SetRunMode("terminate");
+	  alienHandler->SetRunMode("full");
+	  // alienHandler->SetRunMode("terminate");
 	  mgr->StartAnalysis("grid");
         }
     }
