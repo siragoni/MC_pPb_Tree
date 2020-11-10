@@ -242,8 +242,8 @@ void runAnalysis(Int_t period)
         // to merge on grid run jobs in SetRunMode("terminate")
         // to collect final results set SetMergeViaJDL(kFALSE)
         alienHandler->SetMaxMergeStages(2);
-        // alienHandler->SetMergeViaJDL(kFALSE);
-        alienHandler->SetMergeViaJDL(kTRUE);
+        alienHandler->SetMergeViaJDL(kFALSE);
+        // alienHandler->SetMergeViaJDL(kTRUE);
         // define the output folders
         alienHandler->SetGridOutputDir("MyOutputDir");
         // connect the alien plugin to the manager
