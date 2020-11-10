@@ -188,8 +188,8 @@ void AliAnalysisTaskNanoJPsi2016Fwd::UserCreateOutputObjects()
 
   // fAnaTree ->Branch("fTrkPt1", &fTrkPt1, "fTrkPt1/D");
   // fAnaTree ->Branch("fTrkPt2", &fTrkPt2, "fTrkPt2/D");
-  // fAnaTree ->Branch("fTrkEta1", &fTrkEta1, "fTrkEta1/D");
-  // fAnaTree ->Branch("fTrkEta2", &fTrkEta2, "fTrkEta2/D");
+  fAnaTree ->Branch("fTrkEta1", &fTrkEta1, "fTrkEta1/D");
+  fAnaTree ->Branch("fTrkEta2", &fTrkEta2, "fTrkEta2/D");
   // fAnaTree ->Branch("fTrkPhi1", &fTrkPhi1, "fTrkPhi1/D");
   // fAnaTree ->Branch("fTrkPhi2", &fTrkPhi2, "fTrkPhi2/D");
   // fAnaTree ->Branch("fTrkQ1", &fTrkQ1, "fTrkQ1/D");
