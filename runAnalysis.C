@@ -224,7 +224,7 @@ void runAnalysis(Int_t period)
   alienHandler->AddRunNumber(267130);
   alienHandler->AddRunNumber(267131);
 	  // working dir
-	  alienHandler->SetGridWorkingDir("LHC16s_Gamma_xsec");
+	  alienHandler->SetGridWorkingDir("LHC16s_Gamma_xsec2");
 	  alienHandler->SetExecutable("LHC16s_Task.sh");
 	  alienHandler->SetJDLName("LHC16s_Task.jdl");
 	}  else {
