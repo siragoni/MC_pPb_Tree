@@ -75,7 +75,8 @@ void runAnalysis(Int_t period)
         alienHandler->SetAPIVersion("V1.1x");
         // select the input data
 	// alienHandler->SetGridDataDir("/alice/sim/2017/LHC17e4/kIncohJpsiToMu");
-  alienHandler->SetGridDataDir("/alice/sim/2017/LHC17e4/kTwoGammaToMuLow");
+  alienHandler->SetGridDataDir("/alice/sim/2017/LHC17e4_2/kTwoGammaToMuLow");
+  // alienHandler->SetGridDataDir("/alice/sim/2017/LHC17e4/kTwoGammaToMuLow");
   // alienHandler->SetGridDataDir("/alice/sim/2017/LHC17e4/kCohJpsiToMu");
 	alienHandler->SetDataPattern("AOD/*/AliAOD.root");
 	if (period == 0) {
@@ -140,7 +141,7 @@ void runAnalysis(Int_t period)
   alienHandler->AddRunNumber(266316);
   alienHandler->AddRunNumber(266318);
 	  // working dir
-	  alienHandler->SetGridWorkingDir("LHC16r_Gamma_xsec");
+	  alienHandler->SetGridWorkingDir("LHC16r_Gamma_new");
 	  alienHandler->SetExecutable("LHC16r_Task.sh");
 	  alienHandler->SetJDLName("LHC16r_Task.jdl");
 	}  else if (period == 1) {
@@ -224,7 +225,7 @@ void runAnalysis(Int_t period)
   alienHandler->AddRunNumber(267130);
   alienHandler->AddRunNumber(267131);
 	  // working dir
-	  alienHandler->SetGridWorkingDir("LHC16s_Gamma_xsec2");
+	  alienHandler->SetGridWorkingDir("LHC16s_Gamma_new");
 	  alienHandler->SetExecutable("LHC16s_Task.sh");
 	  alienHandler->SetJDLName("LHC16s_Task.jdl");
 	}  else {
@@ -242,8 +243,8 @@ void runAnalysis(Int_t period)
         // to merge on grid run jobs in SetRunMode("terminate")
         // to collect final results set SetMergeViaJDL(kFALSE)
         alienHandler->SetMaxMergeStages(2);
-        alienHandler->SetMergeViaJDL(kFALSE);
-        // alienHandler->SetMergeViaJDL(kTRUE);
+        // alienHandler->SetMergeViaJDL(kFALSE);
+        alienHandler->SetMergeViaJDL(kTRUE);
         // define the output folders
         alienHandler->SetGridOutputDir("MyOutputDir");
         // connect the alien plugin to the manager
@@ -257,8 +258,8 @@ void runAnalysis(Int_t period)
             mgr->StartAnalysis("grid");
         } else {
 	  // else launch the full grid analysis
-	  // alienHandler->SetRunMode("full");
-	  alienHandler->SetRunMode("terminate");
+	  alienHandler->SetRunMode("full");
+	  // alienHandler->SetRunMode("terminate");
 	  mgr->StartAnalysis("grid");
         }
     }
