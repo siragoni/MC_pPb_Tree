@@ -258,8 +258,8 @@ void runAnalysis(Int_t period)
             mgr->StartAnalysis("grid");
         } else {
 	  // else launch the full grid analysis
-	  alienHandler->SetRunMode("full");
-	  // alienHandler->SetRunMode("terminate");
+	  // alienHandler->SetRunMode("full");
+	  alienHandler->SetRunMode("terminate");
 	  mgr->StartAnalysis("grid");
         }
     }
