@@ -17,8 +17,8 @@ void runAnalysis(Int_t period)
   // Bool_t local = kTRUE;
   Bool_t local = kFALSE;
   // if you run on grid, specify test mode (kTRUE) or full grid model (kFALSE)
-  // Bool_t gridTest = kTRUE;
-  Bool_t gridTest = kFALSE;
+  Bool_t gridTest = kTRUE;
+  // Bool_t gridTest = kFALSE;
 
     // since we will compile a class, tell root where to look for headers
 #if !defined (__CINT__) || defined (__CLING__)
@@ -74,9 +74,9 @@ void runAnalysis(Int_t period)
         // set the Alien API version
         alienHandler->SetAPIVersion("V1.1x");
         // select the input data
-  alienHandler->SetGridDataDir("/alice/sim/2017/LHC17e4_2/kIncohJpsiToMu");
+  // alienHandler->SetGridDataDir("/alice/sim/2017/LHC17e4_2/kIncohJpsiToMu");
 	// alienHandler->SetGridDataDir("/alice/sim/2017/LHC17e4/kIncohJpsiToMu");
-  // alienHandler->SetGridDataDir("/alice/sim/2017/LHC17e4_2/kTwoGammaToMuLow");
+  alienHandler->SetGridDataDir("/alice/sim/2017/LHC17e4_2/kTwoGammaToMuLow");
   // alienHandler->SetGridDataDir("/alice/sim/2017/LHC17e4/kTwoGammaToMuLow");
   // alienHandler->SetGridDataDir("/alice/sim/2017/LHC17e4/kCohJpsiToMu");
 	alienHandler->SetDataPattern("AOD/*/AliAOD.root");
@@ -142,7 +142,7 @@ void runAnalysis(Int_t period)
   alienHandler->AddRunNumber(266316);
   alienHandler->AddRunNumber(266318);
 	  // working dir
-	  alienHandler->SetGridWorkingDir("LHC16r_Gamma_new");
+	  alienHandler->SetGridWorkingDir("LHC16r_Gamma_low");
 	  alienHandler->SetExecutable("LHC16r_Task.sh");
 	  alienHandler->SetJDLName("LHC16r_Task.jdl");
 	}  else if (period == 1) {
@@ -259,8 +259,8 @@ void runAnalysis(Int_t period)
             mgr->StartAnalysis("grid");
         } else {
 	  // else launch the full grid analysis
-	  // alienHandler->SetRunMode("full");
-	  alienHandler->SetRunMode("terminate");
+	  alienHandler->SetRunMode("full");
+	  // alienHandler->SetRunMode("terminate");
 	  mgr->StartAnalysis("grid");
         }
     }

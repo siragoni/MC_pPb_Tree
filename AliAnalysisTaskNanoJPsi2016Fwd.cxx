@@ -440,6 +440,30 @@ void AliAnalysisTaskNanoJPsi2016Fwd::GetMCInfo()
 void AliAnalysisTaskNanoJPsi2016Fwd::UserExec(Option_t *)
 {
 
+  fTrkTrkPt = -999.;
+  fTrkTrkPhi = -999.;
+  fTrkTrkY = -999.;
+  fTrkTrkM = -999.;
+  fTrkPt1 = -999.;
+  fTrkPt2 = -999.;
+  fTrkEta1 = -999.;
+  fTrkEta2 = -999.;
+  fTrkPhi1 = -999.;
+  fTrkPhi2 = -999.;
+  fMCTrkTrkPt = -999.;
+  fMCTrkTrkPhi = -999.;
+  fMCTrkTrkY = -999.;
+  fMCTrkTrkM = -999.;
+  fMCTrkPt1 = -999.;
+  fMCTrkPt2 = -999.;
+  fMCTrkEta1 = -999.;
+  fMCTrkEta2 = -999.;
+  fMCTrkPhi1 = -999.;
+  fMCTrkPhi2 = -999.;
+  fTrkQ1 = -999.;
+  fTrkQ2 = -999.;
+  fTrkRabs1 = -999.;
+  fTrkRabs2 = -999.;
 
   ////////////////////////////////////////////
   // general info of the event
@@ -473,6 +497,7 @@ void AliAnalysisTaskNanoJPsi2016Fwd::UserExec(Option_t *)
   if (!isTriggered[0]) {
     PostData(1, fAnaTree);
     PostData(2, fOutputList);
+    fAnaTree->Fill();
     return;
   }
   fCounterH->Fill(iSelectionCounter); // right trigger found
@@ -491,6 +516,7 @@ void AliAnalysisTaskNanoJPsi2016Fwd::UserExec(Option_t *)
   if(nTracks<1) {
     PostData(1, fAnaTree);
     PostData(2, fOutputList);
+    fAnaTree->Fill();
     return;
   }
   fCounterH->Fill(iSelectionCounter); // At least one track
@@ -542,6 +568,7 @@ void AliAnalysisTaskNanoJPsi2016Fwd::UserExec(Option_t *)
   if ( fAnaType == -1 ) {
     PostData(1, fAnaTree);
     PostData(2, fOutputList);
+    fAnaTree->Fill();
     delete [] idxNegTrk;
     delete [] idxPosTrk;
     return;
@@ -586,6 +613,7 @@ void AliAnalysisTaskNanoJPsi2016Fwd::UserExec(Option_t *)
   if(!dataVZERO) {
     PostData(1, fAnaTree);
     PostData(2, fOutputList);
+    fAnaTree->Fill();
     return;
   }
   fV0ADecision = dataVZERO->GetV0ADecision();
@@ -595,6 +623,7 @@ void AliAnalysisTaskNanoJPsi2016Fwd::UserExec(Option_t *)
   if(!dataAD){
     PostData(1, fAnaTree);
     PostData(2, fOutputList);
+    fAnaTree->Fill();
     return;
   }
   fADADecision = dataAD->GetADADecision();
