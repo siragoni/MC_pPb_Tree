@@ -17,8 +17,8 @@ void runAnalysis(Int_t period)
   // Bool_t local = kTRUE;
   Bool_t local = kFALSE;
   // if you run on grid, specify test mode (kTRUE) or full grid model (kFALSE)
-  Bool_t gridTest = kTRUE;
-  // Bool_t gridTest = kFALSE;
+  // Bool_t gridTest = kTRUE;
+  Bool_t gridTest = kFALSE;
 
     // since we will compile a class, tell root where to look for headers
 #if !defined (__CINT__) || defined (__CLING__)
@@ -142,7 +142,7 @@ void runAnalysis(Int_t period)
   alienHandler->AddRunNumber(266316);
   alienHandler->AddRunNumber(266318);
 	  // working dir
-	  alienHandler->SetGridWorkingDir("LHC16r_Gamma_low");
+	  alienHandler->SetGridWorkingDir("LHC16r_Gamma_low2");
 	  alienHandler->SetExecutable("LHC16r_Task.sh");
 	  alienHandler->SetJDLName("LHC16r_Task.jdl");
 	}  else if (period == 1) {
