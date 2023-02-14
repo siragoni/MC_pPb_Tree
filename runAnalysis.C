@@ -142,7 +142,7 @@ void runAnalysis(Int_t period)
   alienHandler->AddRunNumber(266316);
   alienHandler->AddRunNumber(266318);
 	  // working dir
-	  alienHandler->SetGridWorkingDir("LHC16r_Gamma_low5");
+	  alienHandler->SetGridWorkingDir("LHC16r_Gamma_low2");
 	  alienHandler->SetExecutable("LHC16r_Task.sh");
 	  alienHandler->SetJDLName("LHC16r_Task.jdl");
 	}  else if (period == 1) {
@@ -259,8 +259,8 @@ void runAnalysis(Int_t period)
             mgr->StartAnalysis("grid");
         } else {
 	  // else launch the full grid analysis
-	  alienHandler->SetRunMode("full");
-	  // alienHandler->SetRunMode("terminate");
+	  // alienHandler->SetRunMode("full");
+	  alienHandler->SetRunMode("terminate");
 	  mgr->StartAnalysis("grid");
         }
     }
