@@ -92,7 +92,7 @@ void runAnalysis(Int_t period)
   alienHandler->AddRunNumber(265691);
   alienHandler->AddRunNumber(265694);
   alienHandler->AddRunNumber(265697);
-  alienHandler->AddRunNumber(265698);
+  // alienHandler->AddRunNumber(265698);
   alienHandler->AddRunNumber(265700);
   alienHandler->AddRunNumber(265701);
   alienHandler->AddRunNumber(265709);
